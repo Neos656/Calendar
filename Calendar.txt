@@ -3,40 +3,16 @@ local Library = loadstring(Game:HttpGet("https://raw.githubusercontent.com/blood
 
 local PhantomForcesWindow = Library:NewWindow("Just A Cat")
 
-local KillingCheats = PhantomForcesWindow:NewSection("Calendar days")
+local KillingCheats = PhantomForcesWindow:NewSection("Calendar")
 
-KillingCheats:CreateToggle("Day 1", function(value)
-loopActive = value
-        while loopActive and task.wait() do
-local args = {
-    [1] = 2
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IDou8eN7fzSRo4bf8XPB58VsipM="):FireServer(unpack(args))
-end
-print(value)
-end)
-
-KillingCheats:CreateToggle("Day 2", function(value)
-loopActive = value
-        while loopActive and task.wait() do
-local args = {
-    [1] = 2
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IDou8eN7fzSRo4bf8XPB58VsipM="):FireServer(unpack(args))
-end
-print()
-end)
-
-KillingCheats:CreateToggle("Day 3", function(value)
-loopActive = value
-        while loopActive and task.wait() do
-local args = {
-    [1] = 3
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IDou8eN7fzSRo4bf8XPB58VsipM="):FireServer(unpack(args))
-end
-print()
+KillingCheats:CreateTextbox("TextBox", function(value)
+local function updateNumber()
+    local inputValue = tonumber(textBox.Text)
+    if inputValue then
+        local args = {
+            [1] = inputValue
+        }
+        
+        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("IDou8eN7fzSRo4bf8XPB58VsipM="):FireServer(unpack(args))
+        print()
 end)
